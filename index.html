@@ -1,0 +1,3070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NK Solar Tech - Powering Your Future with Solar Energy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #003366;
+            --secondary-blue: #004080;
+            --light-blue: #0059b3;
+            --solar-yellow: #FFCC00;
+            --cta-orange: #FF6600;
+            --cta-orange-hover: #e55c00;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-white: #FFFFFF;
+            --bg-light: #F8F9FA;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        /* Dark Mode Variables */
+        [data-theme="dark"] {
+            --primary-blue: #4a90d9;
+            --secondary-blue: #5a9fe8;
+            --light-blue: #7ab3ed;
+            --solar-yellow: #ffd633;
+            --cta-orange: #ff8533;
+            --cta-orange-hover: #ff9f5c;
+            --text-dark: #e4e4e4;
+            --text-light: #a0a0a0;
+            --bg-white: #1a1a2e;
+            --bg-light: #16213e;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background: var(--bg-white);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-radius: 20px;
+            width: 95%;
+            max-width: 1280px;
+        }
+
+        /* Shake Animation for Nav Links */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-3px); }
+            20%, 40%, 60%, 80% { transform: translateX(3px); }
+        }
+
+        @keyframes pulse-color {
+            0% { color: var(--text-dark); }
+            50% { color: var(--solar-yellow); }
+            100% { color: var(--text-dark); }
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        /* Logo Styles - Update logo.jpg to change the logo */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .site-logo {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* Footer Logo Styles */
+        .footer-logo {
+            height: auto;
+            width: 100%;
+            max-width: 200px;
+            object-fit: contain;
+            margin: 0 auto 16px;
+            display: block;
+        }
+        
+        .footer-brand {
+            text-align: center;
+        }
+        
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .logo-text-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            line-height: 1.2;
+        }
+
+        .logo-nk {
+            color: var(--primary-blue);
+        }
+
+        .logo-solar {
+            color: var(--solar-yellow);
+        }
+
+        .logo-slogan {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--cta-orange);
+            font-style: italic;
+            letter-spacing: 0.3px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--solar-yellow), #ffdb4d);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+            font-size: 1.25rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-link {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            position: relative;
+            padding: 8px 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--solar-yellow);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-blue);
+            animation: shake 0.5s ease-in-out, pulse-color 1s ease-in-out;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Dark Mode Toggle */
+        .theme-toggle {
+            background: transparent;
+            border: 2px solid var(--primary-blue);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            margin-left: 20px;
+        }
+
+        .theme-toggle:hover {
+            background: var(--primary-blue);
+        }
+
+        .theme-toggle:hover .theme-icon {
+            color: white;
+        }
+
+        .theme-icon {
+            font-size: 1.2rem;
+            color: var(--primary-blue);
+            transition: var(--transition);
+        }
+
+        [data-theme="dark"] .theme-toggle {
+            border-color: var(--solar-yellow);
+        }
+
+        [data-theme="dark"] .theme-toggle:hover {
+            background: var(--solar-yellow);
+        }
+
+        [data-theme="dark"] .theme-icon {
+            color: var(--solar-yellow);
+        }
+
+        [data-theme="dark"] .theme-toggle:hover .theme-icon {
+            color: var(--primary-blue);
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--primary-blue);
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+        }
+
+        .hero-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.85) 0%, rgba(0, 64, 128, 0.75) 50%, rgba(0, 51, 102, 0.85) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 900px;
+            padding: 40px 24px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 24px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            min-height: 80px;
+        }
+
+        .typing-text {
+            display: inline-block;
+            border-right: 3px solid var(--solar-yellow);
+            animation: blink-caret 0.8s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--solar-yellow) }
+        }
+
+        .hero-subtext {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            font-weight: 400;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .btn-primary {
+            background: var(--cta-orange);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            border: 2px solid var(--cta-orange);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover {
+            background: var(--cta-orange-hover);
+            border-color: var(--cta-orange-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 102, 0, 0.35);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 16px 40px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            border: 2px solid white;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 16px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--solar-yellow);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 20px auto 0;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--bg-white);
+        }
+
+        .services-grid {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .service-card {
+            background: var(--bg-white);
+            border-radius: 12px;
+            padding: 40px 30px;
+            width: calc(33.333% - 16px);
+            min-width: 280px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--solar-yellow);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.08) 0%, rgba(0, 89, 179, 0.05) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 2rem;
+            color: var(--primary-blue);
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--solar-yellow);
+            color: var(--primary-blue);
+            transform: scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Solar Calculators Section */
+        .calculators {
+            background: var(--bg-light);
+            padding: 60px 0;
+        }
+
+        .calculators-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .calculator-card {
+            background: var(--bg-white);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .calculator-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
+
+        .calculator-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--bg-light);
+        }
+
+        .calculator-header i {
+            font-size: 1.8rem;
+            color: var(--solar-yellow);
+        }
+
+        .calculator-header h3 {
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        .calculator-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .calculator-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .load-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 12px;
+        }
+
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .input-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .input-field label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .input-field input,
+        .input-field select {
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+            background: var(--bg-white);
+            color: var(--text-dark);
+        }
+
+        .input-field input:focus,
+        .input-field select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+        }
+
+        .btn-add-load {
+            background: var(--secondary-blue);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-add-load:hover {
+            background: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        .load-list-container {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .load-list-container h4 {
+            font-size: 1rem;
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+        }
+
+        .load-list {
+            max-height: 180px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+        }
+
+        .load-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 12px;
+            background: var(--bg-white);
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .load-item-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .load-item-name {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .load-item-details {
+            color: var(--text-light);
+            font-size: 0.8rem;
+        }
+
+        .btn-remove-load {
+            background: none;
+            border: none;
+            color: #dc3545;
+            cursor: pointer;
+            padding: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .btn-remove-load:hover {
+            transform: scale(1.2);
+        }
+
+        .empty-message {
+            text-align: center;
+            color: var(--text-light);
+            font-style: italic;
+            padding: 20px;
+        }
+
+        .total-load {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .btn-calculate {
+            width: 100%;
+            padding: 16px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .calculator-result {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            border-radius: 12px;
+            padding: 25px;
+            color: white;
+            display: none;
+        }
+
+        .calculator-result.active {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .calculator-result h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .calculator-result h4 i {
+            color: var(--solar-yellow);
+        }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .result-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .result-label {
+            display: block;
+            font-size: 0.8rem;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .result-value {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--solar-yellow);
+        }
+
+        /* Dark Mode for Calculators */
+        [data-theme="dark"] .calculator-card {
+            background: var(--bg-light);
+            border: 1px solid rgba(255, 204, 0, 0.1);
+        }
+
+        [data-theme="dark"] .input-field input,
+        [data-theme="dark"] .input-field select {
+            background: var(--bg-white);
+            border-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-dark);
+        }
+
+        [data-theme="dark"] .load-input-group,
+        [data-theme="dark"] .load-list-container {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        [data-theme="dark"] .load-item {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        [data-theme="dark"] .load-item-name {
+            color: var(--text-dark);
+        }
+
+        [data-theme="dark"] .input-field label {
+            color: var(--text-dark);
+        }
+
+        [data-theme="dark"] .total-load {
+            color: var(--solar-yellow);
+        }
+
+        [data-theme="dark"] .result-item {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        /* Why Choose Us Section - Modern Two Column Design */
+        .why-us {
+            background: var(--bg-white);
+            padding: 60px 0;
+        }
+
+        .why-us-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        /* Carousel Section (Left Side) */
+        .why-us-carousel {
+            position: relative;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .carousel-track-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            background: var(--bg-light);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .carousel-track {
+            position: relative;
+            min-height: 300px;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+            pointer-events: none;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .carousel-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--bg-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 51, 102, 0.15);
+            transition: var(--transition);
+        }
+
+        .carousel-slide.active .carousel-icon {
+            transform: scale(1);
+        }
+
+        .carousel-icon i {
+            font-size: 2.5rem;
+            color: var(--solar-yellow);
+        }
+
+        .carousel-slide h3 {
+            font-size: 1.75rem;
+            color: var(--primary-blue);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .carousel-slide p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            max-width: 450px;
+        }
+
+        /* Carousel Indicators */
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--text-light);
+            opacity: 0.3;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .indicator.active {
+            background: var(--cta-orange);
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        .indicator:hover {
+            opacity: 0.7;
+        }
+
+        /* Video Section (Right Side) */
+        .why-us-video {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 51, 102, 0.25);
+            height: 400px;
+            background: var(--bg-light);
+        }
+
+        .why-us-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .why-us-video:hover video {
+            transform: scale(1.05);
+        }
+
+        .why-us-video::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.3) 0%, rgba(0, 51, 102, 0.1) 50%, rgba(0, 51, 102, 0.4) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .video-overlay {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+            z-index: 2;
+        }
+
+        .video-overlay h4 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Courses Section */
+        .courses {
+            background: var(--bg-white);
+            position: relative;
+        }
+
+        .courses-wrapper {
+            position: relative;
+        }
+
+        .courses-container {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 20px 10px 40px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .courses-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .course-card {
+            flex: 0 0 380px;
+            background: var(--bg-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .course-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .course-card:hover .course-image {
+            transform: scale(1.05);
+        }
+
+        .course-image-wrapper {
+            overflow: hidden;
+        }
+
+        .course-content {
+            padding: 28px;
+        }
+
+        .course-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .course-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .course-card h3 {
+            font-size: 1.15rem;
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+            font-weight: 600;
+            line-height: 1.4;
+            transition: var(--transition);
+        }
+
+        .course-card:hover h3 {
+            color: var(--light-blue);
+        }
+
+        .course-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .course-link {
+            color: var(--cta-orange);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            background: none;
+            padding: 0;
+        }
+
+        .course-link:hover {
+            gap: 12px;
+            color: var(--cta-orange-hover);
+        }
+
+        /* Course Buttons Container */
+        .course-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+
+        .course-buy-link {
+            color: var(--solar-yellow);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            padding: 10px 16px;
+            background: var(--primary-blue);
+            border-radius: 6px;
+        }
+
+        .course-buy-link:hover {
+            background: var(--light-blue);
+            gap: 12px;
+            color: white;
+        }
+
+        [data-theme="dark"] .course-buy-link {
+            background: var(--primary-blue);
+        }
+
+        [data-theme="dark"] .course-buy-link:hover {
+            background: var(--solar-yellow);
+            color: var(--primary-blue);
+        }
+
+        /* Dark Mode Course Card Styles */
+        [data-theme="dark"] .course-card {
+            background: var(--bg-light);
+            border: 1px solid rgba(255, 204, 0, 0.1);
+        }
+
+        [data-theme="dark"] .course-card h3 {
+            color: var(--solar-yellow);
+        }
+
+        [data-theme="dark"] .course-card:hover h3 {
+            color: #fff;
+        }
+
+        [data-theme="dark"] .course-card p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        [data-theme="dark"] .course-meta {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        [data-theme="dark"] .course-link {
+            color: var(--solar-yellow);
+        }
+
+        [data-theme="dark"] .course-link:hover {
+            color: var(--cta-orange-hover);
+        }
+
+        /* Course Navigation Arrows */
+        .courses-nav {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .course-nav-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--bg-white);
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+        }
+
+        .course-nav-btn:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        [data-theme="dark"] .course-nav-btn {
+            background: var(--bg-light);
+            border-color: var(--solar-yellow);
+            color: var(--solar-yellow);
+        }
+
+        [data-theme="dark"] .course-nav-btn:hover {
+            background: var(--solar-yellow);
+            color: var(--primary-blue);
+        }
+
+        .course-nav-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .course-nav-btn:disabled:hover {
+            background: var(--bg-white);
+            color: var(--primary-blue);
+            transform: none;
+        }
+
+        [data-theme="dark"] .course-nav-btn:disabled:hover {
+            background: var(--bg-light);
+            color: var(--solar-yellow);
+        }
+
+        /* Course Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            max-width: 800px;
+            width: 100%;
+            margin: 20px auto;
+            position: relative;
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            z-index: 10;
+            box-shadow: var(--shadow);
+        }
+
+        .modal-close:hover {
+            background: var(--cta-orange);
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .modal-body {
+            padding: 40px;
+        }
+
+        .modal-meta {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .modal-body h2 {
+            font-size: 1.75rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .modal-body p {
+            font-size: 1rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .modal-body h3 {
+            font-size: 1.25rem;
+            color: var(--primary-blue);
+            margin: 24px 0 12px;
+        }
+
+        .modal-body ul {
+            margin-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        .modal-body li {
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        /* Dark Mode Modal Styles */
+        [data-theme="dark"] .modal-content {
+            background: var(--bg-light);
+            border: 1px solid rgba(255, 204, 0, 0.2);
+        }
+
+        [data-theme="dark"] .modal-close {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--solar-yellow);
+        }
+
+        [data-theme="dark"] .modal-close:hover {
+            background: var(--solar-yellow);
+            color: var(--primary-blue);
+        }
+
+        [data-theme="dark"] .modal-body h2 {
+            color: var(--solar-yellow);
+        }
+
+        [data-theme="dark"] .modal-body p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        [data-theme="dark"] .modal-body h3 {
+            color: var(--solar-yellow);
+        }
+
+        [data-theme="dark"] .modal-body li {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Store Section */
+        .store {
+            background: var(--bg-light);
+        }
+
+        .store-wrapper {
+            position: relative;
+        }
+
+        .store-container {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 20px 10px 40px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .store-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .store-card {
+            flex: 0 0 320px;
+            background: var(--bg-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .store-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .store-image-wrapper {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .store-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .store-card:hover .store-image {
+            transform: scale(1.05);
+        }
+
+        .store-content {
+            padding: 24px;
+        }
+
+        .store-content h3 {
+            font-size: 1.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .store-price {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--cta-orange);
+            margin-bottom: 8px;
+        }
+
+        .store-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .store-buy-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #25D366;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .store-buy-btn:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+
+        .store-nav {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .store-nav-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--bg-white);
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+        }
+
+        .store-nav-btn:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .store-nav-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .store-nav-btn:disabled:hover {
+            background: var(--bg-white);
+            color: var(--primary-blue);
+            transform: none;
+        }
+
+        /* Dark Mode Store Styles */
+        [data-theme="dark"] .store-card {
+            background: var(--bg-light);
+            border: 1px solid rgba(255, 204, 0, 0.1);
+        }
+
+        [data-theme="dark"] .store-content h3 {
+            color: var(--solar-yellow);
+        }
+
+        [data-theme="dark"] .store-desc {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        [data-theme="dark"] .store-nav-btn {
+            background: var(--bg-light);
+            border-color: var(--solar-yellow);
+            color: var(--solar-yellow);
+        }
+
+        [data-theme="dark"] .store-nav-btn:hover {
+            background: var(--solar-yellow);
+            color: var(--primary-blue);
+        }
+
+        /* Store Responsive */
+        @media (max-width: 768px) {
+            .store-card {
+                flex: 0 0 280px;
+            }
+
+            .store-image-wrapper {
+                height: 180px;
+            }
+        }
+
+        /* Quote Form Section */
+        .quote-section {
+            background: var(--primary-blue);
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23FFCC00" stroke-width="0.5" opacity="0.1"/></svg>');
+            background-size: 100px;
+            opacity: 0.3;
+        }
+
+        .quote-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .quote-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .quote-header h2 {
+            font-size: 2.25rem;
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .quote-header p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-container iframe {
+            width: 100%;
+            min-height: 600px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1500;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+
+        .whatsapp-float::before {
+            content: 'Chat with us!';
+            position: absolute;
+            bottom: 75px;
+            right: 0;
+            background: white;
+            color: var(--primary-blue);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover::before {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        .footer {
+            background: #001f3d;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--solar-yellow);
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h4 {
+            font-size: 1.1rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--solar-yellow);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .form-container iframe {
+                min-height: 700px;
+            }
+
+            .service-card {
+                width: calc(50% - 12px);
+            }
+
+            /* Why Choose Us Tablet */
+            .why-us-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .why-us-carousel {
+                min-height: 380px;
+            }
+
+            .carousel-track {
+                min-height: 330px;
+            }
+
+            .carousel-slide {
+                padding: 35px 30px;
+            }
+
+            .carousel-icon {
+                width: 85px;
+                height: 85px;
+            }
+
+            .carousel-icon i {
+                font-size: 2.2rem;
+            }
+
+            .carousel-slide h3 {
+                font-size: 1.6rem;
+            }
+
+            .carousel-slide p {
+                font-size: 1rem;
+            }
+
+            .why-us-image {
+                height: 350px;
+            }
+        }
+
+        [data-theme="dark"] .header {
+            background: var(--bg-white);
+        }
+
+        [data-theme="dark"] .logo {
+            color: var(--primary-blue);
+        }
+
+        [data-theme="dark"] .nav-link {
+            color: var(--text-dark);
+        }
+
+        [data-theme="dark"] .mobile-toggle span {
+            background: var(--primary-blue);
+        }
+
+        /* Mobile Header Styles */
+        @media (max-width: 768px) {
+            /* Hide the text logo on mobile - only show image logo */
+            .mobile-hide {
+                display: none !important;
+            }
+            
+            /* Make header more compact on mobile */
+            .header-inner {
+                padding: 10px 15px;
+                gap: 10px;
+            }
+            
+            /* Smaller logo on mobile */
+            .site-logo {
+                height: 40px;
+                width: auto;
+            }
+            
+            /* Make nav menu fixed at top on mobile */
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--bg-white);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                box-shadow: var(--shadow);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .mobile-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .mobile-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtext {
+                font-size: 1.05rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .service-card {
+                width: 100%;
+            }
+
+            /* Calculators Responsive */
+            .calculators-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .calculator-card {
+                padding: 25px;
+            }
+
+            .input-row {
+                grid-template-columns: 1fr;
+            }
+
+            .result-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .courses-container {
+                padding: 20px 15px 40px;
+            }
+
+            .course-card {
+                flex: 0 0 300px;
+            }
+
+            /* Why Choose Us Responsive */
+            .why-us-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .why-us-carousel {
+                min-height: 400px;
+            }
+
+            .carousel-track {
+                min-height: 350px;
+            }
+
+            .carousel-slide {
+                padding: 40px 30px;
+            }
+
+            .carousel-icon {
+                width: 80px;
+                height: 80px;
+            }
+
+            .carousel-icon i {
+                font-size: 2rem;
+            }
+
+            .carousel-slide h3 {
+                font-size: 1.5rem;
+            }
+
+            .carousel-slide p {
+                font-size: 1rem;
+            }
+
+            .why-us-image {
+                height: 300px;
+                order: -1; /* Image on top for mobile */
+            }
+
+            .quote-header h2 {
+                font-size: 1.75rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-brand h3 {
+                justify-content: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .modal-body {
+                padding: 24px;
+            }
+
+            .modal-image {
+                height: 200px;
+            }
+
+            .modal-body h2 {
+                font-size: 1.35rem;
+            }
+
+            .form-container iframe {
+                min-height: 800px;
+            }
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float svg {
+                width: 26px;
+                height: 26px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .form-container iframe {
+                min-height: 850px;
+            }
+
+            /* Calculators Small Mobile */
+            .calculator-card {
+                padding: 20px;
+            }
+
+            .calculator-header h3 {
+                font-size: 1.2rem;
+            }
+
+            .calculator-result {
+                padding: 20px;
+            }
+
+            .result-item {
+                padding: 12px;
+            }
+
+            .result-value {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo-container">
+                    <!-- LOGO: Replace 'logo' with your logo filename (include extension like .jpg or .png) -->
+                    <img src="public/images/logo.jpg" alt="NK Solar Tech Logo" class="site-logo" id="headerLogo">
+                    <div class="logo-text-container mobile-hide">
+                        <a href="#" class="logo">
+                            <span class="logo-nk">NK</span><span class="logo-solar"> Solar Tech</span>
+                        </a>
+                        <span class="logo-slogan">Adding Comfort to Your Life</span>
+                    </div>
+                </div>
+                <nav class="nav-menu" id="navMenu">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#calculators" class="nav-link">Calculators</a>
+                    <a href="#store" class="nav-link">Store</a>
+                    <a href="#courses" class="nav-link">Courses</a>
+                    <a href="#quote" class="nav-link">Get Quote</a>
+                </nav>
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+                    <i class="fas fa-moon theme-icon" id="themeIcon"></i>
+                </button>
+                <div class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <video autoplay muted loop playsinline>
+                <source src="videos/home.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1><span class="typing-text"></span></h1>
+            <p class="hero-subtext">Solar Inverter Installation & Sales | Electrical Services | Repairs & Maintenance</p>
+            <div class="hero-buttons">
+                <a href="#quote" class="btn-primary">Get a Free Quote</a>
+                <a href="#services" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section - Modern Two Column Design -->
+    <section class="section why-us" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose NK Solar Tech</h2>
+                <p class="section-subtitle">Delivering excellence in solar energy solutions since inception</p>
+            </div>
+            <div class="why-us-container">
+                <!-- Left Side: Carousel -->
+                <div class="why-us-carousel">
+                    <div class="carousel-track-container">
+                        <div class="carousel-track">
+                            <!-- Slide 1: Experienced Team -->
+                            <div class="carousel-slide active" data-slide="0">
+                                <div class="carousel-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <h3>Experienced Team</h3>
+                                <p>Our certified technicians bring years of industry expertise to every project we undertake, ensuring top-quality installations and service.</p>
+                            </div>
+                            <!-- Slide 2: Quality Products -->
+                            <div class="carousel-slide" data-slide="1">
+                                <div class="carousel-icon">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <h3>Quality Products</h3>
+                                <p>We partner with leading manufacturers to provide only the highest quality solar panels, inverters, and battery storage systems backed by comprehensive warranties.</p>
+                            </div>
+                            <!-- Slide 3: Customer Satisfaction -->
+                            <div class="carousel-slide" data-slide="2">
+                                <div class="carousel-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <h3>Customer Satisfaction</h3>
+                                <p>Our commitment to exceptional service means we're not satisfied until you are. We go above and beyond to ensure complete customer satisfaction.</p>
+                            </div>
+                            <!-- Slide 4: Affordable Pricing -->
+                            <div class="carousel-slide" data-slide="3">
+                                <div class="carousel-icon">
+                                    <i class="fas fa-tag"></i>
+                                </div>
+                                <h3>Affordable Pricing</h3>
+                                <p>We believe clean energy should be accessible to everyone. Our competitive pricing and flexible financing options make solar installation affordable for all budgets.</p>
+                            </div>
+                            <!-- Slide 5: 24/7 Support -->
+                            <div class="carousel-slide" data-slide="4">
+                                <div class="carousel-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <h3>24/7 Support</h3>
+                                <p>Our dedicated support team is available around the clock to answer your questions, address concerns, and provide technical assistance whenever you need it.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-indicators">
+                            <div class="indicator active" data-slide="0"></div>
+                            <div class="indicator" data-slide="1"></div>
+                            <div class="indicator" data-slide="2"></div>
+                            <div class="indicator" data-slide="3"></div>
+                            <div class="indicator" data-slide="4"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Side: Video -->
+                <div class="why-us-video">
+                    <video autoplay muted loop playsinline>
+                        <source src="videos/image_1.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-overlay">
+                        <h4>Professional Solar Solutions</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive solar solutions tailored to your energy needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <h3>Solar Inverter Installation & Sales</h3>
+                    <p>Professional installation of high-efficiency solar panels and inverters. We also offer direct sales of premium solar inverters including grid-tie, off-grid, and hybrid systems from trusted brands.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Electrical Installation</h3>
+                    <p>Complete electrical services including wiring, panel upgrades, and safety inspections for residential and commercial properties.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Repairs & Maintenance</h3>
+                    <p>Prompt repair services and regular maintenance to ensure optimal system performance and longevity of your solar investment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solar Calculators Section -->
+    <section class="section calculators" id="calculators">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Solar Calculators</h2>
+                <p class="section-subtitle">Calculate your solar needs instantly with our professional tools</p>
+            </div>
+            <div class="calculators-grid">
+                <!-- Left Calculator: Solar Load Calculator -->
+                <div class="calculator-card">
+                    <div class="calculator-header">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Solar Load Calculator</h3>
+                    </div>
+                    <p class="calculator-subtitle">Calculate your recommended inverter and battery based on your appliances</p>
+                    
+                    <div class="calculator-form">
+                        <div class="load-input-group">
+                            <div class="input-row">
+                                <div class="input-field">
+                                    <label>Appliance</label>
+                                    <select id="appliance">
+                                        <option value="light">Light Bulb</option>
+                                        <option value="fan_ceiling">Ceiling Fan</option>
+                                        <option value="fan_standing">Standing Fan</option>
+                                        <option value="freezer">Deep Freezer</option>
+                                        <option value="tv">TV</option>
+                                        <option value="ac">Air Conditioner (AC)</option>
+                                        <option value="laptop">Laptop/Computer</option>
+                                        <option value="phone">Phone Charger</option>
+                                        <option value="washing">Washing Machine</option>
+                                        <option value="pump">Water Pump</option>
+                                        <option value="iron">Electric Iron</option>
+                                        <option value="microwave">Microwave</option>
+                                    </select>
+                                </div>
+                                <div class="input-field">
+                                    <label>Power (Watts)</label>
+                                    <input type="number" id="appliancePower" placeholder="e.g., 60" min="0">
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-field">
+                                    <label>Quantity</label>
+                                    <input type="number" id="applianceQty" placeholder="e.g., 4" min="1" value="1">
+                                </div>
+                                <div class="input-field">
+                                    <label>Hours/Day</label>
+                                    <input type="number" id="applianceHours" placeholder="e.g., 6" min="0" max="24" step="0.5" value="1">
+                                </div>
+                            </div>
+                            <button type="button" class="btn-add-load" onclick="addLoadItem()">
+                                <i class="fas fa-plus"></i> Add to List
+                            </button>
+                        </div>
+                        
+                        <div class="load-list-container">
+                            <h4>Added Appliances:</h4>
+                            <div class="load-list" id="loadList">
+                                <p class="empty-message">No appliances added yet</p>
+                            </div>
+                            <div class="total-load">
+                                <span>Total Daily Load:</span>
+                                <span id="totalWatts">0 Wh/day</span>
+                            </div>
+                        </div>
+                        
+                        <button type="button" class="btn-primary btn-calculate" onclick="calculateInverterBattery()">
+                            <i class="fas fa-bolt"></i> Calculate Recommended Inverter & Battery
+                        </button>
+                        
+                        <div class="calculator-result" id="loadResult">
+                            <h4><i class="fas fa-lightbulb"></i> Recommended System Size</h4>
+                            <div class="result-grid">
+                                <div class="result-item">
+                                    <span class="result-label">Inverter Capacity</span>
+                                    <span class="result-value" id="recommendedInverter">--</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Battery Size</span>
+                                    <span class="result-value" id="recommendedBattery">--</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Daily Energy</span>
+                                    <span class="result-value" id="dailyEnergy">--</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Recommended Panels</span>
+                                    <span class="result-value" id="recommendedPanels">--</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Calculator: Solar System Design Tool -->
+                <div class="calculator-card">
+                    <div class="calculator-header">
+                        <i class="fas fa-solar-panel"></i>
+                        <h3>Solar System Design Tool</h3>
+                    </div>
+                    <p class="calculator-subtitle">Calculate panel wattage, cable size, and mounting distance</p>
+                    
+                    <div class="calculator-form">
+                        <div class="input-row">
+                            <div class="input-field">
+                                <label>Battery Voltage (V)</label>
+                                <select id="batteryVoltage">
+                                    <option value="12">12V</option>
+                                    <option value="24">24V</option>
+                                    <option value="48">48V</option>
+                                </select>
+                            </div>
+                            <div class="input-field">
+                                <label>Battery Capacity (Ah)</label>
+                                <input type="number" id="batteryCapacity" placeholder="e.g., 200" min="1">
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="input-field">
+                                <label>Number of Batteries</label>
+                                <input type="number" id="numBatteries" placeholder="e.g., 4" min="1" value="1">
+                            </div>
+                            <div class="input-field">
+                                <label>Solar Panel Wattage (W)</label>
+                                <input type="number" id="panelWattage" placeholder="Optional" min="1">
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="input-field">
+                                <label>Distance from Panels to Battery (meters)</label>
+                                <input type="number" id="distance" placeholder="e.g., 10" min="0" step="0.5">
+                            </div>
+                            <div class="input-field">
+                                <label>System Type</label>
+                                <select id="systemType">
+                                    <option value="offgrid">Off-Grid</option>
+                                    <option value="hybrid">Hybrid</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="button" class="btn-primary btn-calculate" onclick="calculateSolarSystem()">
+                            <i class="fas fa-cogs"></i> Calculate System Design
+                        </button>
+                        
+                        <div class="calculator-result" id="systemResult">
+                            <h4><i class="fas fa-solar-panel"></i> System Design Results</h4>
+                            <div class="result-grid">
+                                <div class="result-item">
+                                    <span class="result-label">Total Battery Bank</span>
+                                    <span class="result-value" id="totalBatteryBank">--</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Recommended Panel Wattage</span>
+                                    <span class="result-value" id="calcPanelWattage">--</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">DC Cable Size</span>
+                                    <span class="result-value" id="cableSize">--</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Mounting Distance</span>
+                                    <span class="result-value" id="mountDistance">--</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Recommended Charge Controller</span>
+                                    <span class="result-value" id="chargeController">--</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">System Voltage</span>
+                                    <span class="result-value" id="systemVoltage">--</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Section -->
+    <section class="section store" id="store">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Store</h2>
+                <p class="section-subtitle">Quality solar products at great prices - Order directly via WhatsApp</p>
+            </div>
+            <div class="store-wrapper">
+                <div class="store-container" id="storeContainer">
+                    <!-- Products will be loaded dynamically from API -->
+                </div>
+                <div class="store-nav">
+                    <button class="store-nav-btn" id="storePrev" title="Previous Product">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="store-nav-btn" id="storeNext" title="Next Product">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="section courses" id="courses">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Courses</h2>
+                <p class="section-subtitle">Stay informed with the latest insights on solar energy</p>
+            </div>
+            <div class="courses-wrapper">
+                <div class="courses-container" id="coursesContainer">
+                    <!-- Courses will be loaded dynamically from API -->
+                </div>
+                <div class="courses-nav">
+                    <button class="course-nav-btn" id="coursesPrev" title="Previous Course">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="course-nav-btn" id="coursesNext" title="Next Course">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section class="quote-section" id="quote">
+        <div class="container">
+            <div class="quote-content">
+                <div class="quote-header">
+                    <h2>Get Your Free Quote Today</h2>
+                    <p>Fill out the form below and our team will contact you within 24 hours to discuss your solar needs.</p>
+                </div>
+                <div class="form-container">
+                    <!-- Google Form Embed - Replace with your actual Google Form URL -->
+                    <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <!-- LOGO: Replace 'logo' with your logo filename (include extension like .jpg or .png) -->
+                    <img src="public/images/logo.jpg" alt="NK Solar Tech Logo" class="footer-logo" id="footerLogo">
+                    <p>Leading provider of solar energy solutions, inverter systems, and professional training programs. Powering a sustainable future.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#courses"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Solar Inverter Installation</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Inverter Sales</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Electrical Work</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Repairs & Maintenance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Solar Street, Energy City</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> +1 (555) 123-4567</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> info@nksolartech.com</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Mon - Sat: 8:00 AM - 6:00 PM</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2025 NK Solar Tech. All rights reserved.</p>
+                <p class="copyright">Designed with <i class="fas fa-heart" style="color: var(--solar-yellow);"></i> for a sustainable future</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/15551234567?text=Hello%20NK%20Solar%2C%20I%20am%20interested%20in%20a%20quote%20for%20solar%20installation." target="_blank" class="whatsapp-float" title="Chat with us on WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <script src="/js/config.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Typing Animation
+        const textElement = document.querySelector('.typing-text');
+        const textToType = "Powering Your Future with Solar Energy";
+        let charIndex = 0;
+        let isDeleting = false;
+        let typeDirection = 'forward';
+        
+        function typeEffect() {
+            if (typeDirection === 'forward') {
+                textElement.textContent = textToType.substring(0, charIndex + 1);
+                charIndex++;
+                
+                if (charIndex === textToType.length) {
+                    // Pause at full text
+                    typeDirection = 'pause';
+                    setTimeout(() => {
+                        typeDirection = 'backward';
+                        typeEffect();
+                    }, 2000);
+                    return;
+                }
+            } else if (typeDirection === 'backward') {
+                textElement.textContent = textToType.substring(0, charIndex);
+                charIndex--;
+                
+                if (charIndex === 0) {
+                    typeDirection = 'forward';
+                    setTimeout(() => {
+                        typeEffect();
+                    }, 500);
+                    return;
+                }
+            } else if (typeDirection === 'pause') {
+                return;
+            }
+            
+            const typeSpeed = typeDirection === 'forward' ? 80 : 40;
+            setTimeout(typeEffect, typeSpeed);
+        }
+
+        // Start typing animation after page load
+        window.addEventListener('load', () => {
+            setTimeout(typeEffect, 1000);
+        });
+
+        // Modal Functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Close modal when clicking outside
+        document.querySelectorAll('.modal-overlay').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.active').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Why Choose Us Carousel
+        const carouselSlides = document.querySelectorAll('.carousel-slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const carouselContainer = document.querySelector('.carousel-track-container');
+        let currentSlide = 0;
+        let slideInterval;
+        const slideDuration = 4000; // 4 seconds per slide
+
+        function goToSlide(index) {
+            // Update slides
+            carouselSlides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+
+            // Update indicators
+            indicators.forEach((indicator, i) => {
+                indicator.classList.remove('active');
+                if (i === index) {
+                    indicator.classList.add('active');
+                }
+            });
+
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            const next = (currentSlide + 1) % carouselSlides.length;
+            goToSlide(next);
+        }
+
+        function startAutoSlide() {
+            slideInterval = setInterval(nextSlide, slideDuration);
+        }
+
+        function stopAutoSlide() {
+            clearInterval(slideInterval);
+        }
+
+        // Start auto-play
+        startAutoSlide();
+
+        // Pause on hover
+        if (carouselContainer) {
+            carouselContainer.addEventListener('mouseenter', stopAutoSlide);
+            carouselContainer.addEventListener('mouseleave', startAutoSlide);
+        }
+
+        // Click indicators to navigate
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                goToSlide(index);
+                // Reset timer
+                stopAutoSlide();
+                startAutoSlide();
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply initial styles and observe elements
+        document.querySelectorAll('.service-card, .feature-item, .course-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const htmlElement = document.documentElement;
+
+        // Check for saved theme preference or default to light
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+
+        function updateThemeIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        // Courses Carousel Navigation
+        const coursesContainer = document.getElementById('coursesContainer');
+        const coursesPrev = document.getElementById('coursesPrev');
+        const coursesNext = document.getElementById('coursesNext');
+        const cardWidth = 380 + 30; // Card width + gap
+        let scrollPosition = 0;
+
+        function updateNavButtons() {
+            const maxScroll = coursesContainer.scrollWidth - coursesContainer.clientWidth;
+            coursesPrev.disabled = scrollPosition <= 0;
+            coursesNext.disabled = scrollPosition >= maxScroll;
+        }
+
+        coursesPrev.addEventListener('click', () => {
+            scrollPosition = Math.max(0, scrollPosition - cardWidth);
+            coursesContainer.scrollTo({
+                left: scrollPosition,
+                behavior: 'smooth'
+            });
+            updateNavButtons();
+        });
+
+        coursesNext.addEventListener('click', () => {
+            const maxScroll = coursesContainer.scrollWidth - coursesContainer.clientWidth;
+            scrollPosition = Math.min(maxScroll, scrollPosition + cardWidth);
+            coursesContainer.scrollTo({
+                left: scrollPosition,
+                behavior: 'smooth'
+            });
+            updateNavButtons();
+        });
+
+        // Update scroll position on scroll event
+        coursesContainer.addEventListener('scroll', () => {
+            scrollPosition = coursesContainer.scrollLeft;
+            updateNavButtons();
+        });
+
+        // Initialize nav buttons
+        updateNavButtons();
+
+        // =====================
+        // STORE CAROUSEL NAVIGATION
+        // =====================
+        const storeContainer = document.getElementById('storeContainer');
+        const storePrev = document.getElementById('storePrev');
+        const storeNext = document.getElementById('storeNext');
+        const storeCardWidth = 320 + 30; // Store card width + gap
+        let storeScrollPosition = 0;
+
+        function updateStoreNavButtons() {
+            if (!storeContainer) return;
+            const maxScroll = storeContainer.scrollWidth - storeContainer.clientWidth;
+            if (storePrev) storePrev.disabled = storeScrollPosition <= 0;
+            if (storeNext) storeNext.disabled = storeScrollPosition >= maxScroll;
+        }
+
+        if (storePrev && storeNext) {
+            storePrev.addEventListener('click', () => {
+                storeScrollPosition = Math.max(0, storeScrollPosition - storeCardWidth);
+                storeContainer.scrollTo({
+                    left: storeScrollPosition,
+                    behavior: 'smooth'
+                });
+                updateStoreNavButtons();
+            });
+
+            storeNext.addEventListener('click', () => {
+                if (!storeContainer) return;
+                const maxScroll = storeContainer.scrollWidth - storeContainer.clientWidth;
+                storeScrollPosition = Math.min(maxScroll, storeScrollPosition + storeCardWidth);
+                storeContainer.scrollTo({
+                    left: storeScrollPosition,
+                    behavior: 'smooth'
+                });
+                updateStoreNavButtons();
+            });
+
+            // Update scroll position on scroll event
+            storeContainer.addEventListener('scroll', () => {
+                storeScrollPosition = storeContainer.scrollLeft;
+                updateStoreNavButtons();
+            });
+
+            // Initialize store nav buttons
+            updateStoreNavButtons();
+        }
+
+        // =====================
+        // SOLAR CALCULATORS
+        // =====================
+
+        // Load Calculator Variables
+        let loadItems = [];
+        const appliancePowers = {
+            'light': 15,
+            'fan_ceiling': 75,
+            'fan_standing': 60,
+            'freezer': 150,
+            'tv': 100,
+            'ac': 1200,
+            'laptop': 65,
+            'phone': 5,
+            'washing': 500,
+            'pump': 750,
+            'iron': 1000,
+            'microwave': 1000
+        };
+
+        const applianceNames = {
+            'light': 'Light Bulb',
+            'fan_ceiling': 'Ceiling Fan',
+            'fan_standing': 'Standing Fan',
+            'freezer': 'Deep Freezer',
+            'tv': 'TV',
+            'ac': 'Air Conditioner (AC)',
+            'laptop': 'Laptop/Computer',
+            'phone': 'Phone Charger',
+            'washing': 'Washing Machine',
+            'pump': 'Water Pump',
+            'iron': 'Electric Iron',
+            'microwave': 'Microwave'
+        };
+
+        // Update power when appliance changes
+        document.getElementById('appliance').addEventListener('change', function() {
+            const selectedAppliance = this.value;
+            const powerInput = document.getElementById('appliancePower');
+            powerInput.value = appliancePowers[selectedAppliance] || '';
+        });
+
+        // Add Load Item
+        function addLoadItem() {
+            const appliance = document.getElementById('appliance').value;
+            const power = parseFloat(document.getElementById('appliancePower').value) || 0;
+            const qty = parseInt(document.getElementById('applianceQty').value) || 1;
+            const hours = parseFloat(document.getElementById('applianceHours').value) || 0;
+
+            if (power <= 0 || hours <= 0) {
+                alert('Please enter valid power (Watts) and hours per day');
+                return;
+            }
+
+            const loadItem = {
+                id: Date.now(),
+                name: applianceNames[appliance],
+                power: power,
+                qty: qty,
+                hours: hours,
+                totalDaily: power * qty * hours
+            };
+
+            loadItems.push(loadItem);
+            updateLoadList();
+            resetLoadInputs();
+        }
+
+        function resetLoadInputs() {
+            document.getElementById('applianceQty').value = '1';
+            document.getElementById('applianceHours').value = '1';
+        }
+
+        function removeLoadItem(id) {
+            loadItems = loadItems.filter(item => item.id !== id);
+            updateLoadList();
+        }
+
+        function updateLoadList() {
+            const loadList = document.getElementById('loadList');
+            const totalWattsEl = document.getElementById('totalWatts');
+
+            if (loadItems.length === 0) {
+                loadList.innerHTML = '<p class="empty-message">No appliances added yet</p>';
+                totalWattsEl.textContent = '0 Wh/day';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+
+            loadItems.forEach(item => {
+                total += item.totalDaily;
+                html += `
+                    <div class="load-item">
+                        <div class="load-item-info">
+                            <span class="load-item-name">${item.name}</span>
+                            <span class="load-item-details">${item.qty} × ${item.power}W × ${item.hours}h = ${item.totalDaily} Wh</span>
+                        </div>
+                        <button class="btn-remove-load" onclick="removeLoadItem(${item.id})">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                `;
+            });
+
+            loadList.innerHTML = html;
+            totalWattsEl.textContent = total.toFixed(0) + ' Wh/day';
+        }
+
+        // Calculate Inverter and Battery
+        function calculateInverterBattery() {
+            if (loadItems.length === 0) {
+                alert('Please add at least one appliance to calculate');
+                return;
+            }
+
+            const totalDailyLoad = loadItems.reduce((sum, item) => sum + item.totalDaily, 0);
+            
+            // Calculate peak power (sum of all appliances running simultaneously)
+            const peakPower = loadItems.reduce((sum, item) => sum + (item.power * item.qty), 0);
+            
+            // Inverter size: 25% larger than peak power
+            const inverterSize = peakPower * 1.25;
+            
+            // Battery calculation (assuming 12V system, 50% DOD, 3 days autonomy)
+            const dailyEnergy = totalDailyLoad / 1000; // kWh
+            const batteryAh = (dailyEnergy * 1000 * 3) / (12 * 0.5); // 3 days, 50% DOD
+            
+            // Recommended panels (assuming 5 peak sun hours)
+            const panelWattage = Math.ceil(dailyEnergy * 1000 / 5);
+
+            // Update results
+            document.getElementById('dailyEnergy').textContent = totalDailyLoad.toFixed(0) + ' Wh';
+            
+            if (inverterSize < 1000) {
+                document.getElementById('recommendedInverter').textContent = (inverterSize / 1000).toFixed(2) + ' kW';
+            } else {
+                document.getElementById('recommendedInverter').textContent = inverterSize.toFixed(0) + ' VA';
+            }
+            
+            if (batteryAh < 1000) {
+                document.getElementById('recommendedBattery').textContent = batteryAh.toFixed(0) + ' Ah @ 12V';
+            } else {
+                document.getElementById('recommendedBattery').textContent = (batteryAh / 1000).toFixed(1) + ' kWh';
+            }
+            
+            document.getElementById('recommendedPanels').textContent = panelWattage + 'W minimum';
+
+            // Show results
+            document.getElementById('loadResult').classList.add('active');
+        }
+
+        // Calculate Solar System Design
+        function calculateSolarSystem() {
+            const voltage = parseFloat(document.getElementById('batteryVoltage').value);
+            const capacity = parseFloat(document.getElementById('batteryCapacity').value) || 0;
+            const numBatteries = parseInt(document.getElementById('numBatteries').value) || 1;
+            const panelWattage = parseFloat(document.getElementById('panelWattage').value) || 0;
+            const distance = parseFloat(document.getElementById('distance').value) || 0;
+
+            // Total battery bank
+            const totalAh = capacity * numBatteries;
+            const totalVoltage = voltage; // Batteries in series
+            const totalEnergy = (totalAh * totalVoltage) / 1000; // kWh
+
+            // Recommended panel wattage (if not provided)
+            let recommendedPanel = panelWattage;
+            if (recommendedPanel <= 0) {
+                // 10% of battery bank for minimum system
+                recommendedPanel = Math.ceil(totalEnergy * 1000 * 0.3); // 30% of battery capacity in watts
+            }
+
+            // Cable size calculation (using standard ampacity)
+            // Assume 3% voltage drop max
+            const maxCurrent = (recommendedPanel * 4) / voltage; // Max current from panels
+            const wireAmpacity = maxCurrent * 1.25; // 125% of max current
+            
+            // Cable size based on ampacity (using standard AWG/mm²)
+            let cableSize = '4mm²';
+            if (wireAmpacity > 30) cableSize = '6mm²';
+            if (wireAmpacity > 40) cableSize = '10mm²';
+            if (wireAmpacity > 60) cableSize = '16mm²';
+            if (wireAmpacity > 80) cableSize = '25mm²';
+
+            // Mounting distance recommendation
+            let mountDistance = '10-15 meters';
+            if (distance > 0) {
+                if (distance < 10) mountDistance = distance + 'm (Close - Good!)';
+                else if (distance < 30) mountDistance = distance + 'm (Standard)';
+                else mountDistance = distance + 'm (Long - Use larger cable)';
+            }
+
+            // Charge controller recommendation
+            const controllerAmps = Math.ceil((recommendedPanel * 4) / voltage);
+            let controllerType = 'PWM';
+            if (voltage >= 24 || recommendedPanel > 400) {
+                controllerType = 'MPPT';
+            }
+            const controllerRating = controllerAmps + 'A ' + controllerType;
+
+            // Update results
+            document.getElementById('totalBatteryBank').textContent = totalAh.toFixed(0) + 'Ah @ ' + voltage + 'V';
+            document.getElementById('calcPanelWattage').textContent = recommendedPanel + 'W minimum';
+            document.getElementById('cableSize').textContent = cableSize + ' (DC side)';
+            document.getElementById('mountDistance').textContent = mountDistance;
+            document.getElementById('chargeController').textContent = controllerRating;
+            document.getElementById('systemVoltage').textContent = voltage + 'V System';
+
+            // Show results
+            document.getElementById('systemResult').classList.add('active');
+        }
+    </script>
+</body>
+</html>
