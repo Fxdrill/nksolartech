@@ -1,5 +1,17 @@
 // Admin Dashboard JavaScript
 
+// Get API URL from config
+const API_URL = typeof CONFIG !== 'undefined' ? CONFIG.BACKEND_URL : '';
+
+// Helper function to get API endpoint
+function getApiUrl(endpoint) {
+    if (API_URL) {
+        return `${API_URL}${endpoint}`;
+    }
+    return endpoint; // Same domain
+}
+
+
 let currentSection = 'products';
 let products = [];
 let courses = [];
