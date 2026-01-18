@@ -8,7 +8,7 @@
 
 const CONFIG = {
     // Your Render Backend URL (leave empty for local)
-    BACKEND_URL: '', // e.g., 'https://nk-solar-tech-backend.onrender.com'
+    BACKEND_URL: 'https://nkbackend.onrender.com', // e.g., 'https://nk-solar-tech-backend.onrender.com'
     
     // For GitHub Pages deployment, enter your backend URL above
     // The frontend will automatically use this URL for all API calls
