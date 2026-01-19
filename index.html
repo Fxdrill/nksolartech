@@ -109,7 +109,6 @@
             align-items: center;
             justify-content: space-between;
             height: 80px;
-            position: relative; /* Add this line if it's missing! */
         }
 
         /* Logo Styles - Update logo.jpg to change the logo */
@@ -2062,48 +2061,16 @@
             .result-value {
                 font-size: 1rem;
             }
-        /* Mobile Menu Container Styles */
-        .mobile-menu {
-            display: none; /* Keeps it hidden until we click the button */
-            flex-direction: column;
-            position: absolute;
-            top: 80px; 
-            right: 0;
-            background-color: #8db53f; /* The green color from your image */
-            width: 250px;
-            padding: 10px 0;
-            border-radius: 0 0 0 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            z-index: 1001;
-        }
-
-        /* This makes the menu appear when we click */
-        .mobile-menu.active {
-            display: flex;
-        }
-
-        .mobile-nav-link {
-            padding: 15px 25px;
-            color: white;
-            font-weight: 700;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Hide the normal menu on small screens */
-        @media (max-width: 768px) {
-            .nav-menu { display: none; }
-            .mobile-toggle { display: flex; }
-        }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="container">          
+        <div class="container">
             <div class="header-inner">
                 <div class="logo-container">
+                    <!-- LOGO: Replace 'logo' with your logo filename (include extension like .jpg or .png) -->
                     <img src="public/images/logo.jpg" alt="NK Solar Tech Logo" class="site-logo" id="headerLogo">
                     <div class="logo-text-container mobile-hide">
                         <a href="#" class="logo">
@@ -2112,7 +2079,6 @@
                         <span class="logo-slogan">Adding Comfort to Your Life</span>
                     </div>
                 </div>
-
                 <nav class="nav-menu" id="navMenu">
                     <a href="#home" class="nav-link">Home</a>
                     <a href="#about" class="nav-link">About</a>
@@ -2122,24 +2088,13 @@
                     <a href="#courses" class="nav-link">Courses</a>
                     <a href="#quote" class="nav-link">Get Quote</a>
                 </nav>
-
                 <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
                     <i class="fas fa-moon theme-icon" id="themeIcon"></i>
                 </button>
-
                 <div class="mobile-toggle" id="mobileToggle">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
-
-                <div class="mobile-menu" id="mobileMenu">
-                    <a href="#home" class="mobile-nav-link">Home</a>
-                    <a href="#about" class="mobile-nav-link">About Us</a>
-                    <a href="#trainings" class="mobile-nav-link">Trainings</a>
-                    <a href="#contact" class="mobile-nav-link">Contact Us</a>
-                    <a href="#projects" class="mobile-nav-link">Projects</a>
-                    <a href="#verify" class="mobile-nav-link">Verify Certificate</a>
                 </div>
             </div>
         </div>
@@ -3112,22 +3067,4 @@
         }
     </script>
 </body>
-    <script>
-            const mobileToggle = document.querySelector('.mobile-toggle');
-            const mobileMenu = document.getElementById('mobileMenu');
-
-            // This listens for a click on the hamburger icon
-            mobileToggle.addEventListener('click', () => {
-                mobileMenu.classList.toggle('active');
-            });
-
-            // This closes the menu if you click a link
-            document.querySelectorAll('.mobile-nav-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.remove('active');
-                });
-            });
-        </script>
-    </body>
-
 </html>
