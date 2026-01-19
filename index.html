@@ -1850,27 +1850,37 @@
             }
             
             /* Make nav menu fixed at top on mobile */
+
             .nav-menu {
                 position: fixed;
-                top: 70px;
-                left: 0;
+                top: 80px;                 /* below header */
                 right: 0;
+                width: 60%;                /* half screen */
+                height: auto;              /* only as tall as menu items */
                 background: var(--bg-white);
                 flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
                 padding: 20px;
                 gap: 15px;
-                box-shadow: var(--shadow);
-                transform: translateY(-100%);
+                box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+                border-top-left-radius: 16px;
+                border-bottom-left-radius: 16px;
+
+                transform: translateX(100%);
                 opacity: 0;
                 visibility: hidden;
-                transition: var(--transition);
+                transition: all 0.3s ease;
+                z-index: 1200;
             }
 
             .nav-menu.active {
-                transform: translateY(0);
+                transform: translateX(0);
                 opacity: 1;
                 visibility: visible;
             }
+        }
+
 
             .mobile-toggle {
                 display: flex;
